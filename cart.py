@@ -9,6 +9,7 @@ usuario["name"]=input("ingresa nuevamente tu nombre")
 usuario["document"]=input("ingresa nuevamente tu número de documento")
 print(usuario)
 carrito=[]
+carrito_actualizado=[]
 productos=[
     {
         "name":"banano",
@@ -58,7 +59,6 @@ for i in range(100):
         break
 
 print(carrito)
-
 precio_neto=0
 precio_total=0
 for item in carrito:
@@ -68,4 +68,22 @@ for item in carrito:
 print("total precio neto es", precio_neto)
 print("total precio neto es", precio_total)
 
-    
+for i in range(100):
+        
+        for i in carrito:
+            print(carrito)
+            contador = 0
+            for i in carrito:
+                print(f"{contador} - {producto["name"]}")
+                contador = contador +1
+                modificar=input("¿deseas modificar productos del carrito")
+                if modificar == "si":   
+                    indice_modificado=int(input("selecciona el producto a modificar"))
+                    nueva_cantidad= int(input("ingrese la cantidad a modificar"))
+                    producto_modificado = productos[indice_modificado]
+                    producto_modificado["cantidad"]=nueva_cantidad
+                    producto_modificado.append(i)
+                    print(carrito)
+                else: 
+                    break
+print(producto_modificado)
